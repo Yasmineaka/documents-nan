@@ -1,0 +1,110 @@
+
+body{  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: rgb(248, 247, 247);
+}
+.div_principale{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+}
+.div_principale .formulaire{
+    border: 1px solid rgb(101, 101, 101);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background: turquoise; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+}
+.div_principale .formulaire.login{
+    left: 0;
+    padding: 0 40px;
+    background-color: rgb(144, 190, 235);
+    border-radius: 12px;
+}
+
+.formulaire h2{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+.formulaire .div_input{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /* background: blueviolet; */
+    margin: 25px 0;
+}
+.div_input input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    transition: .5s;
+}
+.div_input input:focus,
+.div_input input:valid{
+    border-bottom-color: white;
+}
+.div_input label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: white;
+    transition: .5s;
+    
+}
+.div_input input:focus~label,
+.div_input input:valid~label{
+    top: -5px;
+    color: #fff;
+}
+
+.div_input i{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: white;
+}
+.btn{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+.div_input .compte{
+    font-size: 14.5px;
+    color: white;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+.compte p a {
+    color: rgb(42, 108, 165);
+    text-decoration: none;
+    font-weight: 600;
+    
+}
+.compte p a:hover{
+    text-decoration: underline;
+}

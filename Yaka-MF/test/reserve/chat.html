@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant Automatique</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.question label {
+    margin-bottom: 10px;
+}
+
+.question select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.answer p {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.satisfaction p {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Assistant Automatique</h1>
+        <div class="question">
+            <label for="question-select">Choisissez une question :</label>
+            <select id="question-select">
+                <option value="1">C'est quoi la micro finance?</option>
+                <option value="2">Quel est votre âge ?</option>
+                <option value="3">Quel est votre lieu de résidence ?</option>
+                <option value="4">Quel est votre animal préféré ?</option>
+            </select>
+            <button id="ask-button">Poser la question</button>
+        </div>
+        <div class="answer">
+            <p id="response"></p>
+        </div>
+        <div class="satisfaction">
+            <p>Êtes-vous satisfait de la réponse ?</p>
+            <button id="yes-button">Oui</button>
+            <button id="no-button">Non</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const questionSelect = document.getElementById("question-select");
+    const askButton = document.getElementById("ask-button");
+    const responseParagraph = document.getElementById("response");
+    const yesButton = document.getElementById("yes-button");
+    const noButton = document.getElementById("no-button");
+
+    const questions = {
+        1: "Un micro-crédit, comme son nom l'indique, correspond à un crédit d'un faible montant destiné avant tout à des personnes aux faibles revenus.",
+        2: "C'est quoi la micro-finance?",
+        3: "Vous offrez quel service?",
+        4: "Quel bénéfice je gagne sur mf"
+    };
+
+    askButton.addEventListener("click", function () {
+        const selectedQuestion = parseInt(questionSelect.value);
+        if (questions[selectedQuestion]) {
+            responseParagraph.textContent = questions[selectedQuestion];
+        } else {
+            responseParagraph.textContent = "Question invalide.";
+        }
+    });
+
+    yesButton.addEventListener("click", function () {
+        alert("Merci de votre satisfaction !");
+    });
+
+    noButton.addEventListener("click", function () {
+        alert("Un humain interviendra pour répondre plus tard.");
+    });
+});
+
+    </script>
+</body>
+</html>

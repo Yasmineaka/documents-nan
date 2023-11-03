@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Styles pour le bouton rond */
+        .round-button {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db; /* Couleur de fond du bouton */
+            border-radius: 50%; /* Pour le rendre rond */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* Styles pour la flèche à l'intérieur du bouton */
+        .bx .bx-chevron-right{
+            width: 500px;
+            height: 500px;
+            font-weight: 100px;
+            border-left: 2px solid #fff; /* Ligne verticale de la flèche */
+            border-bottom: 2px solid #fff; /* Ligne diagonale de la flèche */
+            transform: rotate(45deg); /* Rotation de la flèche */
+        }
+        .arrow1{
+            width: 20px;
+            height: 20px;
+            border-left: 2px solid #fff; /* Ligne verticale de la flèche */
+            border-bottom: 2px solid #fff; /* Ligne diagonale de la flèche */
+            transform: rotate(230deg); /* Rotation de la flèche */
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton "Next" -->
+    <div class="round-button">
+        <div class="arrow"><i class='bx bx-chevron-right' ></i></div>
+    </div>
+
+    <!-- Deuxième bouton "Next" -->
+    <div class="round-button">
+        <div class="arrow1"><i class='bx bx-chevron-right' ></i></div>
+    </div>
+</body>
+</html>

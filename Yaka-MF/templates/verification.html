@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification du Code - Plateforme de Microfinance</title>
+    <style>
+        /* Styles pour le corps de la page */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Styles pour le formulaire de vérification du code */
+        .verification-form {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border: 1px solid #65C0FF ;
+            width: 400px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .verification-form h2 {
+            box-shadow: 1px 1px 1px 2px;
+            margin: 20px;
+            font-size: 30px;
+            color: #65C0FF;
+        }
+
+        .verification-form input[type="text"] {
+            width: 90%;
+            padding: 5px;
+            margin: 5px 0;
+            border: none;
+            border-bottom: 2px solid #65bfff9f;
+            outline: none;
+            font-size: 18px;
+            transition: border-bottom-color 0.3s ease;
+        }
+
+        .verification-form input[type="text"]:focus {
+            border-bottom-color: #4488CC;
+        }
+
+        .verification-form button {
+            background-color: #65C0FF;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-size: 17px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .verification-form button:hover {
+            background-color: #4488CC;
+        }
+
+        .verification-form p {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="verification-form">
+        <h2>Vérification du Code</h2>
+        <form method="POST">
+            <input type="text" name="code_verification" placeholder="Entrez le code de vérification" required>
+            <button type="submit">Valider</button>
+        </form>
+        <p>Vous n'avez pas reçu de code ? <a style="text-decoration: none; color: #65C0FF;" href="#">Renvoyer le code</a></p>
+    </div>
+</body>
+</html>

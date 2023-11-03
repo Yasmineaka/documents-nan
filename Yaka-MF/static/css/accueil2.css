@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.barre-navigation {
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo img {
+    max-height: 40px;
+    margin-right: 20px;
+}
+
+.menus ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menus li {
+    margin-right: 20px;
+}
+
+.menus a {
+    text-decoration: none;
+    color: white;
+}
+
+.connexion-deconnexion button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.connexion-deconnexion button.bouton-connexion {
+    margin-right: 10px;
+}
+
+.section-accueil {
+    position: relative;
+}
+
+.section-accueil img {
+    width: 100%;
+    height: auto;
+}
+
+.contenu-accueil {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.contenu-texte {
+    margin-top: 20px;
+}
+.texte-box{
+    background: blue;
+    margin: 1px;
+    width: 100%;
+}
+.texte-box p {
+    font-size: 16px;
+    padding: 30px;
+}
+
+
+.contenu-accueil button.bouton-commencer {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Styles pour le bouton "Commencer" au survol */
+.contenu-accueil button.bouton-commencer:hover {
+    background-color: darkblue;
+}

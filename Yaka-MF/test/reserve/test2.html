@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Témoignages</title>
+    <style>
+   
+        /* Styles pour la mise en page du slide */
+.testimonial-slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial-image img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+/* Styles pour les boutons de contrôle */
+.slider-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.prev-button, .next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/* Styles pour le témoin actif */
+.testimonial.active {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+    </style>
+</head>
+<body>
+    <div class="testimonial-slider">
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image1.jpg" alt="Témoin 1">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 1</h3>
+                <p>Profession du Témoin 1</p>
+                <p>Description du témoignage du Témoin 1</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image2.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image2.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image2.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image2.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image2.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image2.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="image2.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <!-- Ajoutez autant de témoignages que vous le souhaitez ici -->
+    </div>
+    <div class="slider-controls">
+        <button class="prev-button">Précédent</button>
+        <button class="next-button">Suivant</button>
+    </div>
+    <script >
+        const testimonials = document.querySelectorAll('.testimonial');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+
+let currentTestimonialIndex = 0;
+let autoSlideInterval;
+
+function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove('active');
+        if (i === index) {
+            testimonial.classList.add('active');
+        }
+    });
+}
+
+function nextTestimonial() {
+    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+    showTestimonial(currentTestimonialIndex);
+}
+
+function prevTestimonial() {
+    currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentTestimonialIndex);
+}
+
+prevButton.addEventListener('click', () => {
+    prevTestimonial();
+    clearInterval(autoSlideInterval); // Arrêter le défilement automatique lors d'un clic sur "Précédent"
+});
+
+nextButton.addEventListener('click', () => {
+    nextTestimonial();
+    clearInterval(autoSlideInterval); // Arrêter le défilement automatique lors d'un clic sur "Suivant"
+});
+
+function autoSlide() {
+    nextTestimonial();
+}
+
+// Commencer le défilement automatique toutes les 5 secondes
+autoSlideInterval = setInterval(autoSlide, 5000);
+
+// Afficher le premier témoignage au chargement de la page
+showTestimonial(currentTestimonialIndex);
+
+    </script>
+</body>
+</html>

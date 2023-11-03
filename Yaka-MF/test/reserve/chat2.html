@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant Automatique</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.chat {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.messages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.message {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.user-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+select {
+    padding: 10px;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat">
+            <div class="messages" id="messages">
+                <div class="message">Bonjour ! Posez une question.</div>
+            </div>
+            <div class="user-input">
+                <select id="question-select">
+                    <option value="1">Quel est votre nom ?</option>
+                    <option value="2">Quel est votre âge ?</option>
+                    <option value="3">Quel est votre lieu de résidence ?</option>
+                    <option value="4">Quel est votre animal préféré ?</option>
+                </select>
+                <button id="ask-button">Envoyer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const questionSelect = document.getElementById("question-select");
+    const askButton = document.getElementById("ask-button");
+    const messages = document.getElementById("messages");
+
+    const questions = {
+        1: "Votre nom est ...",
+        2: "Vous ",
+        3: "Vous habitez à Paris.",
+        4: "Votre animal préféré est le chien."
+    };
+
+    function addMessage(text, isUser = false) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message");
+        if (isUser) {
+            messageDiv.classList.add("user");
+        }
+        messageDiv.textContent = text;
+        messages.appendChild(messageDiv);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    askButton.addEventListener("click", function () {
+        const selectedQuestion = parseInt(questionSelect.value);
+        if (questions[selectedQuestion]) {
+            addMessage(questions[selectedQuestion], true);
+            setTimeout(function () {
+                addMessage("Pouvez-vous me poser une autre question ?");
+            }, 1000);
+        } else {
+            addMessage("Question invalide. Veuillez choisir une question valide.", true);
+        }
+    });
+
+    addMessage("Bonjour ! Posez une question.");
+});
+
+    </script>
+</body>
+</html>

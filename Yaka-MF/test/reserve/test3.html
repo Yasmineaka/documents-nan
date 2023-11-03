@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Témoignages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+            /* overflow: hidden; pour empêcher les défilements inutiles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .temoignage-div {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-height: 400px;
+            overflow: hidden;
+        }
+
+        .temoignage {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px 15px #DDDDDD;
+            padding: 20px;
+            max-width: 400px;
+            margin: 10px;
+            flex-grow: 1;
+            display: none;
+            transition: all 0.3s ease-in-out;
+            transform: scale(0.8);
+            border: 1px solid transparent;
+            display: flex; /* Ajoutez cette ligne */
+            align-items: center; /* Ajoutez cette ligne */
+        }
+       
+    
+        .bouton_next {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styles pour les icônes */
+        .bouton_next i {
+            font-size: 24px;
+            margin: 0 10px;
+            cursor: pointer;
+            color: #007BFF;
+            border: 1px solid;
+            padding: 7px;
+            border-radius: 20px;
+            width: 25px;
+        }
+
+        .bouton_next i:hover {
+            color: #007BFF;
+        }
+.nom_prof_img{
+    display: flex;
+    color: #777777;
+    text-align: justify;
+}
+.nom_prof_img p{
+    margin: 3px;
+}
+.temoignage img {
+    border: 1px solid;
+    border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="temoignage-div">
+        <div class="temoignage">
+            <div class="nom_prof_img">
+                    <img src="../img/meeting-5395615_1280.jpg" alt="Image Témoin 1" class="nom_prof_img">
+                    <div style="text-align: justify; "> 
+                        <p style="font-size: 22px; font-weight: bold; color: #007BFF;">John Doe</p> 
+                        <p style="color: #777777">Dghjkl</p>
+                    </div>          
+            </div>
+            <p class="nom_prof_img">Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable!</p> 
+        </div>
+        <div class="temoignage">
+            <div class="nom_prof_img">
+                    <img src="../img/meeting-5395615_1280.jpg" alt="Image Témoin 2" class="nom_prof_img">
+                    <div style="text-align: justify; "> 
+                        <p style="font-size: 22px; font-weight: bold; color: #007BFF;">John Doe</p> 
+                        <p style="color: #777777">mlkjhgxdfghjkjhvc</p>
+                    </div>          
+            </div>
+            <p class="nom_prof_img">"Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable!"</p> 
+        </div>
+        <div class="temoignage">
+            <div class="nom_prof_img">
+                    <img src="../img/meeting-5395615_1280.jpg" alt="Image Témoin 3" class="nom_prof_img">
+                    <div style="text-align: justify; "> 
+                        <p style="font-size: 22px; font-weight: bold; color: #007BFF;">John Doe</p> 
+                        <p style="color: #777777">qsdfghjkhgfdsq</p>
+                    </div>          
+            </div>
+            <p class="nom_prof_img">"Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable!"</p> 
+        </div>
+        <div class="temoignage">
+            <div class="nom_prof_img">
+                    <img src="../img/meeting-5395615_1280.jpg" alt="Image Témoin 4" class="nom_prof_img">
+                    <div style="text-align: justify; "> 
+                        <p style="font-size: 22px; font-weight: bold; color: #007BFF;">John Doe</p> 
+                        <p style="color: #777777">Dghjkl</p>
+                    </div>          
+            </div>
+            <p class="nom_prof_img">"Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable!"</p> 
+        </div>
+        <div class="temoignage">
+            <div class="nom_prof_img">
+                    <img src="../img/meeting-5395615_1280.jpg" alt="Image Témoin 5" class="nom_prof_img">
+                    <div style="text-align: justify; "> 
+                        <p style="font-size: 22px; font-weight: bold; color: #007BFF;">John Doe</p> 
+                        <p style="color: #777777">Dghjkl</p>
+                    </div>          
+            </div>
+            <p class="nom_prof_img">"Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable!"</p> 
+        </div>
+        <div class="temoignage">
+            <div class="nom_prof_img">
+                    <img src="../img/meeting-5395615_1280.jpg" alt="Image Témoin 6" class="nom_prof_img">
+                    <div style="text-align: justify; "> 
+                        <p style="font-size: 22px; font-weight: bold; color: #007BFF;">John Doe</p> 
+                        <p style="color: #777777">Dghjkl</p>
+                    </div>          
+            </div>
+            <p class="nom_prof_img">"Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable! Témoignage 1. Ce site est incroyable!"</p> 
+        </div>
+    </div>
+    <div class="bouton_next">
+        <i id="prev" class="fas fa-chevron-left"></i>
+        <i id="next" class="fas fa-chevron-right"></i>
+    </div>
+    
+    <script>
+        const temoignages = document.querySelectorAll('.temoignage');
+let currentIndex = 0;
+let intervalId;
+
+function showTemoignages(index) {
+    temoignages.forEach((temoignage, i) => {
+        if (i >= index && i < index + 3) {
+            temoignage.style.display = 'block';
+            if (i === index + 1) {
+                temoignage.style.transform = 'scale(1)';
+                temoignage.style.border = '1px solid #007BFF';
+                temoignage.style.boxShadow = 'none';
+            } else {
+                temoignage.style.transform = 'scale(0.8)';
+                temoignage.style.border = '1px solid transparent';
+                temoignage.style.boxShadow = '1px 1px 1px 15px #DDDDDD';
+            }
+        } else {
+            temoignage.style.display = 'none';
+        }
+    });
+}
+
+function nextTemoignage() {
+    currentIndex = (currentIndex + 1) % (temoignages.length - 2);
+    showTemoignages(currentIndex);
+}
+
+function prevTemoignage() {
+    currentIndex = (currentIndex - 1 + (temoignages.length - 2)) % (temoignages.length - 2);
+    showTemoignages(currentIndex);
+}
+
+// pour témoignage toutes les 5 secondes
+startAutomaticScroll();
+
+function startAutomaticScroll() {
+    intervalId = setInterval(() => {
+        nextTemoignage();
+    }, 5000); // Change de témoignage toutes les 5 secondes
+}
+
+// Affiche les témoignages dès que la page se charge
+showTemoignages(currentIndex);
+
+// Démarre le défilement automatique après un court délai (par exemple, 2 secondes)
+setTimeout(() => {
+    startAutomaticScroll();
+}, 2000);
+
+document.getElementById('next').addEventListener('click', () => {
+    nextTemoignage();
+    clearInterval(intervalId); // Arrête le défilement automatique lorsque l'utilisateur clique
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    prevTemoignage();
+    clearInterval(intervalId); // Arrête le défilement automatique lorsque l'utilisateur clique
+});
+    </script>
+</body>
+</html>

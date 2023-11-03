@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <style>
+        .contact-div {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%; /* Ajustez la largeur selon vos besoins */
+            margin: 0 auto; /* Centre horizontalement */
+            height: 300px;
+         
+        }
+
+        .contact-info,
+        .contact-form {
+            flex: 1;
+            padding: 6px;
+        }
+
+        .contact-form{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .contact-form h4{
+            color: #007BFF;
+        }
+        .contact-info {
+            background-color: #007BFF; /* Fond bleu */
+            color: #fff; /* Texte blanc */
+            text-align: center;
+            border-right: 1px solid #ccc; /* Ligne de séparation à droite */
+        }
+
+        label {
+            display: block;
+            color: rgb(42, 42, 42);
+        }
+        h4{
+            text-align: center;
+        }
+        input,
+        textarea {
+            width: 60%;
+            height: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea{
+            height: 20px;
+            max-width: 60%;
+            min-width: 60%;
+            max-height: 30px;
+        }
+
+        .button-envoyer {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;  font-family: 'Franklin Gothic Medium';color: #007BFF;">Contactez-nous</h2>
+
+    <div class="contact-div">
+        <div class="contact-info">
+            <h4>Adresse et Contact</h4>
+            <p>Appelez-Nous <br>0759152201/0585825774</p>
+            <p>Localisation <br>Côte d’ivoire <br>Abidjan, cocody angré gestoci</p>
+            <p>Heure de travail <br>Lun-vend 08:30 - 20:30 <br>Sam-dim 09:00 - 18:00</p>
+        </div>
+
+        <div class="contact-form">
+            <h4>Formulaire de Contact</h4>
+            <form action="traitement_formulaire.php" method="post">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required><br>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4"  required></textarea><br>
+
+                <button class="button-envoyer" type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

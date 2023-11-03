@@ -1,0 +1,5 @@
+bleu 007BFF
+bleu ciel 65C0FF
+noir 000000
+bleu cassé 65C0FF
+hover bleu #65bfff75

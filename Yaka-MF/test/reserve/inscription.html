@@ -1,0 +1,155 @@
+
+<!-- POUR LE CODE QUE JE VIEN DE T'ENVOYER C'EST UNE AGE INSCRIPTION JE VEUX FAIRE DE SORTE A CE QUE LORSQU'ON S'INSCRIT UN CODE DE VALIDATION SOIT ENVOYER AU NUMERO DE TELEPHONE DE LA FICHE SELON LE CHOIX DE L'ENVOIS QUI EST DEMANDER A L'UTILISATEUR SUR LA FICHE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <style>
+            /* Styles pour le corps de la page */
+            body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Styles pour le formulaire d'inscription */
+        .registration-form {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border: 1px solid #65C0FF ;
+            width: 500px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .registration-form h2 {
+            box-shadow: 1px 1px 1px 2px;
+            margin: 20px;
+            font-size: 30px;
+            color: #65C0FF;
+
+        }
+
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"],
+        .registration-form select {
+            width: 90%;
+            padding: 5px;
+            margin: 5px 0;
+            border: none;
+            border-bottom: 2px solid #65bfff9f;
+            outline: none;
+            font-size: 18px;
+            transition: border-bottom-color 0.3s ease;
+        }
+        .registration-form select {
+            width: 91%;
+        }
+
+        .registration-form input[type="text"]:focus,
+        .registration-form input[type="email"]:focus,
+        .registration-form input[type="password"]:focus,
+        .registration-form select:focus {
+            border-bottom-color: #4488CC;
+        }
+
+        .registration-form button {
+            background-color: #65C0FF;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-size: 17px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .registration-form button:hover {
+            background-color: #4488CC;
+        }
+        option{
+            background: white;
+        }
+        .registration-form p {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #777;
+        }
+
+        /* Ajout de styles pour les boutons radio */
+        .choix_auth {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .choix_auth label {
+            margin-right: 10px;
+        }
+            /* Styles pour les médias mobiles */
+            @media (max-width: 768px) {
+            .registration-form {
+                width: 70%;
+            }
+
+            .registration-form h2 {
+                font-size: 28px;
+            }
+
+            .registration-form input[type="text"],
+            .registration-form input[type="email"],
+            .registration-form input[type="password"],
+            .registration-form select {
+                font-size: 16px;
+            }
+
+            .registration-form button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h2>Yaka<span>-MF</span></h2>
+        <input type="text" placeholder="Nom complet" required>
+        <input type="email" placeholder="Adresse e-mail" required>
+        <input type="text" placeholder="Contact" required>
+        <select>
+            <option value="" disabled selected>Pays d'origine</option>
+            <option value="homme">Cote d'ivoire</option>
+            <option value="femme">Ghana</option>
+            <option value="autre">Mali</option>
+        </select>
+        <select>
+            <option value="" disabled selected>Genre</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="autre">Autre</option>
+        </select>
+        <input type="password" placeholder="Mot de passe" required>
+
+        <!-- Ajout des boutons radio pour le choix de l'authentification -->
+        <div style="display: block;" class="choix_auth">
+            <label for="">Sur quoi souhaitez-vous recevoir votre code d'authentification?</label>
+            <label for="email">Email</label>
+            <input type="radio" id="email" name="auth-method" value="email" checked>
+            <label for="sms">SMS</label>
+            <input type="radio" id="sms" name="auth-method" value="sms">
+        </div>
+
+        <button>S'inscrire</button>
+        <p>Déjà membre ? <a style="text-decoration: none; color: #65C0FF;" href="#">Se connecter</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Témoignages</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.testimonial {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    margin: 10px;
+    flex-grow: 1;
+    display: none;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <p>"Témoignage 1. Ce site est incroyable!"</p>
+            <p>- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <p>"Témoignage 2. J'adore ce service!"</p>
+            <p>- Jane Smith</p>
+        </div>
+        <div class="testimonial">
+            <p>"Témoignage 3. Le meilleur site professionnel!"</p>
+            <p>- Robert Johnson</p>
+        </div>
+        <div class="testimonial">
+            <p>"Témoignage 4. C'est vraiment génial!"</p>
+            <p>- Alice Brown</p>
+        </div>
+        <div class="testimonial">
+            <p>"Témoignage 5. Une expérience formidable!"</p>
+            <p>- Emily Wilson</p>
+        </div>
+        <div class="testimonial">
+            <p>"Témoignage 6. Excellent service!"</p>
+            <p>- Michael Clark</p>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="prev">Précédent</button>
+        <button id="next">Suivant</button>
+    </div>
+   <script>
+    const testimonials = document.querySelectorAll('.testimonial');
+let currentIndex = 0;
+
+function showTestimonials(index) {
+    testimonials.forEach((testimonial, i) => {
+        if (i >= index && i < index + 3) {
+            testimonial.style.display = 'block';
+        } else {
+            testimonial.style.display = 'none';
+        }
+    });
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % (testimonials.length - 2);
+    showTestimonials(currentIndex);
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + (testimonials.length - 2)) % (testimonials.length - 2);
+    showTestimonials(currentIndex);
+});
+
+// Afficher les trois premiers témoignages au chargement de la page
+showTestimonials(currentIndex);
+
+   </script>
+</body>
+</html>

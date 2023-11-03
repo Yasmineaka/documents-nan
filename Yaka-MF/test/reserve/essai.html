@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style pour la grande div */
+        .grande-div {
+            background-color: #3498db; /* Couleur de fond bleue */
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Style pour les images */
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style pour les div de gauche et de droite */
+        .div-gauche,
+        .div-droite {
+            display: inline-block;
+            width: 45%;
+            margin: 2.5%;
+            vertical-align: top;
+        }
+
+        /* Style pour les descriptions */
+        .description {
+            text-align: center;
+            margin-top: 10px;
+            color: white; /* Couleur du texte en blanc */
+        }
+
+        /* Style pour la div contenant les deux images alignées horizontalement */
+        .div-images-horizontales {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Style pour les images sous la grande div */
+        .image-sous-div {
+            max-width: 48%; /* Réduire la largeur des images pour les aligner côte à côte */
+            height: auto;
+        }
+
+        /* Style pour les descriptions sous la grande div */
+        .description-sous {
+            text-align: center;
+            margin-top: 10px;
+            color: white; /* Couleur du texte en blanc */
+        }
+    </style>
+</head>
+<body>
+    <div class="grande-div">
+        <img src="chemin/vers/votre-image.jpg" alt="Votre image" class="image">
+        <p class="description">Description de l'image</p>
+        
+        <div class="div-images-horizontales">
+            <div class="div-sous-gauche">
+                <img src="chemin/vers/image-gauche.jpg" alt="Image à gauche" class="image-sous-div">
+                <p class="description-sous">Description de l'image à gauche</p>
+            </div>
+
+            <div class="div-sous-droite">
+                <img src="chemin/vers/image-droite.jpg" alt="Image à droite" class="image-sous-div">
+                <p class="description-sous">Description de l'image à droite</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

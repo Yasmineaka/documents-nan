@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Témoignages</title>
+    <style>
+        /* Styles pour la mise en page du slide */
+.testimonial-slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial-image img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+/* Styles pour les boutons de contrôle */
+.slider-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.prev-button, .next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/* Styles pour le témoin actif */
+.testimonial.active {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+    </style>
+</head>
+<body>
+    <div class="testimonial-slider">
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="../img/img accueil.jpg" alt="Témoin 1">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 1</h3>
+                <p>Profession du Témoin 1</p>
+                <p>Description du témoignage du Témoin 1</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="../img/meeting-5395615_1280.jpg" alt="Témoin 2">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 2</h3>
+                <p>Profession du Témoin 2</p>
+                <p>Description du témoignage du Témoin 2</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <img src="../img/business-8150776_1280.jpg" alt="Témoin 3">
+            </div>
+            <div class="testimonial-info">
+                <h3>Nom du Témoin 3</h3>
+                <p>Profession du Témoin 3</p>
+                <p>Description du témoignage du Témoin 3</p>
+            </div>
+        </div>
+    </div>
+    <div class="slider-controls">
+        <button class="prev-button">Précédent</button>
+        <button class="next-button">Suivant</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+<script>
+    const testimonials = document.querySelectorAll('.testimonial');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+
+let currentTestimonialIndex = 0;
+
+function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove('active');
+        if (i === index) {
+            testimonial.classList.add('active');
+        }
+    });
+}
+
+prevButton.addEventListener('click', () => {
+    currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentTestimonialIndex);
+});
+
+nextButton.addEventListener('click', () => {
+    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+    showTestimonial(currentTestimonialIndex);
+});
+
+// Afficher le premier témoignage au chargement de la page
+showTestimonial(currentTestimonialIndex);
+
+</script>
+</html>

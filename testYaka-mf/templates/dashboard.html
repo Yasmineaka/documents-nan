@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+ <link rel="stylesheet" href="../static/dashboard.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord du client</title>
+    <!-- Lien vers vos fichiers CSS ici -->
+</head>
+<body>
+    <header>
+        <h1>Bienvenue, {{ utilisateur['nom'] }} !</h1>
+        <h1>Bienvenue sur votre tableau de bord, {{ utilisateur.nom }} !</h1>
+        <p>Informations de l'utilisateur:</p>
+        <ul>
+            <li>Nom: {{ utilisateur.nom }}</li>
+            <li>E-mail: {{ utilisateur.email }}</li>
+            <li>Contact: {{ utilisateur.contact }}</li>
+        </ul>
+        <nav>
+            <ul>
+                <li><a href="#">Solde</a></li>
+                <li><a href="#">Créer un compte d'épargne</a></li>
+                <li><a href="#">Éducation financière</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Contenu principal ici -->
+    <main>
+        <section id="solde">
+            <h2>Solde Principal</h2>
+            <p>{{ utilisateur['solde'] }} $</p>
+        </section>
+        <section id="transactions">
+            <h2>Historique des Transactions</h2>
+            <ul>
+                {% for transaction in historique_transactions %}
+                    <li>{{ transaction }}</li>
+                {% endfor %}
+            </ul>
+            <button id="transactionButton">Effectuer une transaction</button>
+            <div id="transactionForm" style="display: none;">
+                <form action="{{ url_for('effectuer_transaction') }}" method="POST">
+                    <label for="montant">Montant :</label>
+                    <input type="number" name="montant" id="montant" required>
+                    <select name="type">
+                        <option value="depot">Dépôt</option>
+                        <option value="retrait">Retrait</option>
+                    </select>
+                    <button type="submit">Valider</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Lien vers vos fichiers JavaScript ici -->
+    <script>
+        document.getElementById('transactionButton').addEventListener('click', function() {
+            document.getElementById('transactionForm').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
